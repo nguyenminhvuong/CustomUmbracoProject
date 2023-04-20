@@ -1,0 +1,72 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    @await Html.PartialAsync("Partials/metadata.cshtml");
+
+    <!-- ** Plugins Needed for the Project ** -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+
+    <!-- Main Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    @await RenderSectionAsync("EndOfHead", false);
+</head>
+
+<body>
+    @await RenderSectionAsync("TopOfBody", false);
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /preloader -->
+    @await Html.PartialAsync("Partials/navigation.cshtml")
+
+    <!-- featured post -->
+    @await Html.PartialAsync("Partials/featuredPost.cshtml");
+    <!-- /featured post -->
+
+    @RenderBody()
+
+    @await Html.PartialAsync("Partials/footer.cshtml");
+
+    <!-- jQuery -->
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- slick slider -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <!-- masonry -->
+    <script src="plugins/masonry/masonry.js"></script>
+    <!-- instafeed -->
+    <script src="plugins/instafeed/instafeed.min.js"></script>
+    <!-- smooth scroll -->
+    <script src="plugins/smooth-scroll/smooth-scroll.js"></script>
+    <!-- headroom -->
+    <script src="plugins/headroom/headroom.js"></script>
+    <!-- reading time -->
+    <script src="plugins/reading-time/readingTime.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="js/script.js"></script>
+    @await RenderSectionAsync("EndOfBody", false);
+</body>
+</html>
