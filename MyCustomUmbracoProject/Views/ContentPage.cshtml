@@ -1,11 +1,16 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentPage>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentPage>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="mb-4">@Model.Title</h2>
-            @Model.BodyText
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="mb-4">@Model.Title</h2>
+                @if (Model.FeaturedImage != null)
+                {
+                    <img src="@Model.FeaturedImage.Url()" alt="@Model.FeaturedImage.Name" class="img-fluid w-100 mb-4">
+                }
+                @Model.BodyText
+            </div>
         </div>
     </div>
-</div>
+</section>
